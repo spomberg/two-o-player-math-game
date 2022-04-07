@@ -14,7 +14,7 @@ Method:  game (generates math question, takes input, if player answers wrong cal
 -Question
 State: :first_number , :second_number , :sum
 Method: generate_random_number, generate_question
-
+ø
 -Turn
 State: current_player , current_question
 Method: setter for current_player, lose_life
