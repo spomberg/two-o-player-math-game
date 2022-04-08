@@ -8,7 +8,7 @@ Method: Getter/Setter for Lives
 -Game
 A game where it asks a math question about an addition of two random numbers from 1 to 20. The game will be between 2 players who take turns answering the question. If a player gets a question wrong, they lose a life. If the player loses all their lives, the game is over.
 
-State: 
+State: turn
 Method:  game (generates math question, takes input, if player answers wrong call lose_life method),  game_over
 
 -Question

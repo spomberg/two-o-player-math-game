@@ -2,20 +2,21 @@ require './games'
 require './players'
 require './questions'
 require './turns'
-require 'pp'
 
-first_question = Question.new
+question = Question.new
 player_one = Player.new("Player 1")
 player_two = Player.new("Player 2")
+game = Game.new(player_one, player_two, question)
 
-# puts first_question.sum
-# puts first_question.ask_question
+while game.player_one.current_lives > 0 && game.player_two.current_lives > 0
+    game.ask_question
+    if !game.game_over
+      game.next_player
+      puts "---- NEW TURN ----"
+    end
+    game.current_question = Question.new
+end
 
-# first_question = Question.new
-# puts first_question.sum
-# puts first_question.ask_question
-
-new_turn = Turn.new(player_one, first_question)
-new_turn.lose_life
-pp player_one
-
+game.game_over
+puts "---- GAME OVER ----"
+puts "Good bye"
